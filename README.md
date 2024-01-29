@@ -1,24 +1,24 @@
 Certainly! Below is a sample README file that provides instructions on how to install Vite, run a Vite app, and introduces your platform "AlgoView" for DSA analysis:
 
 ```markdown
-# AlgorithmicView
+# AlgoView
 
-AlgorithmicView is a platform designed to help students and developers visualize Data Structures and Algorithms (DSA). This project utilizes Vite as the development environment for building and running the application.
+AlgoView is a platform designed to help students and developers visualize Data Structures and Algorithms (DSA). This project utilizes Vite as the development environment for building and running the application.
 
 ## Installation
 
-To get started with AlgorithmicView, you need to have Node.js and npm (Node Package Manager) installed on your machine. Follow the steps below to install the project dependencies and run the application:
+To get started with AlgoView, you need to have Node.js and npm (Node Package Manager) installed on your machine. Follow the steps below to install the project dependencies and run the application:
 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/AlgorithmicView.git
+   git clone https://github.com/your-username/AlgoView.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd AlgorithmicView
+   cd AlgoView
    ```
 
 3. Install dependencies using npm:
@@ -29,7 +29,7 @@ To get started with AlgorithmicView, you need to have Node.js and npm (Node Pack
 
 ## Running the Application
 
-Once the installation is complete, you can run the AlgorithmicView app with the following command:
+Once the installation is complete, you can run the AlgoView app with the following command:
 
 ```bash
 npm run dev
@@ -39,7 +39,7 @@ This will start the development server, and you can access the application in yo
 
 ## Usage
 
-AlgorithmicView provides a user-friendly interface to visualize and analyze various Data Structures and Algorithms. Explore the features and functionalities to enhance your understanding of DSA concepts.
+AlgoView provides a user-friendly interface to visualize and analyze various Data Structures and Algorithms. Explore the features and functionalities to enhance your understanding of DSA concepts.
 
 ## Contributing
 
