@@ -7,6 +7,7 @@ import {
     Text,
     IconButton,
     useDisclosure,
+    Divider
   } from "@chakra-ui/react";
   import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
   
@@ -14,7 +15,8 @@ import {
     const { isOpen, onOpen, onClose } = useDisclosure();
   
     return (
-      <Box bg="teal.500" p={4}>
+     <>
+       <Box bg="#0A1B1E" p={4}>
         <Flex alignItems="center" justifyContent="space-between">
           {/* Logo or brand */}
           <Text fontSize="2xl" fontWeight="bold" color="white">
@@ -52,6 +54,8 @@ import {
           </VStack>
         </Box>
       </Box>
+      <Divider orientation="horizontal"/>
+     </>
     );
   };
   

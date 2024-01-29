@@ -20,8 +20,8 @@ const LinearSearch = () => {
   return (
     <>
       <Navbar />
-      <VStack p={4} spacing={4} align="center">
-        <Text fontSize="xl" fontWeight="bold">
+      <VStack height="93vh" bg="#0A1B1E" p={20} spacing={4} align="center">
+        <Text color="#EAEBEA" fontSize="xl" fontWeight="bold">
           Linear Search Visualization
         </Text>
         <Flex>
@@ -31,7 +31,7 @@ const LinearSearch = () => {
             value={searchValue}
             onChange={(e) => setSearchValue(e.target.value)}
           />
-          <Button ml={2} colorScheme="teal" onClick={linearSearch}>
+          <Button ml={2} bg="#6F8784" colorScheme="teal" onClick={linearSearch}>
             Search
           </Button>
         </Flex>
