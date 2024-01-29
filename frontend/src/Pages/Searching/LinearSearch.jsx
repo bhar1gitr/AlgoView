@@ -48,7 +48,7 @@ const LinearSearch = () => {
   return (
     <>
       <Navbar />
-      <VStack height="93vh" bg="#0A1B1E" p={20} spacing={4} align="center">
+      <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} align="center">
         <Text color="#EAEBEA" fontSize="xl" fontWeight="bold">
           Linear Search Visualization
         </Text>
@@ -90,9 +90,11 @@ const LinearSearch = () => {
             Element not found.
           </Text>
         )}
-      <SyntaxHighlighter language="java" style={docco}>
+            <Box width="100%" height="10%">
+            <SyntaxHighlighter language="java" style={docco}>
       {codeString}
     </SyntaxHighlighter>
+            </Box>
       </VStack>
 
     </>
