@@ -26,6 +26,7 @@ const LinearSearch = () => {
         </Text>
         <Flex>
           <Input
+            color="#FFFFFF"
             type="number"
             placeholder="Enter value to search"
             value={searchValue}
@@ -41,11 +42,12 @@ const LinearSearch = () => {
               key={index}
               display="inline-block"
               textAlign="center"
-              p={2}
+              p={4}
               borderRadius="md"
               border="1px solid"
               borderColor={searchIndex === index ? 'teal.500' : 'gray.300'}
               bg={searchIndex === index ? 'teal.50' : 'white'}
+              ml={2}
             >
               {value}
             </Box>
