@@ -1,4 +1,4 @@
-Certainly! Below is a sample README file that provides instructions on how to install Vite, run a Vite app, and introduces your platform "AlgorithmicView" for DSA analysis:
+Certainly! Below is a sample README file that provides instructions on how to install Vite, run a Vite app, and introduces your platform "AlgoView" for DSA analysis:
 
 ```markdown
 # AlgorithmicView
@@ -51,7 +51,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 Happy coding!
 ```
-
-Note: Replace "your-username" in the clone command with your actual GitHub username or the URL of your AlgorithmicView repository.
 
 Feel free to customize this README file based on your project structure and specific details. Additionally, consider adding more sections like "Features," "Demo," or "Acknowledgments" based on the features and content of your platform.
