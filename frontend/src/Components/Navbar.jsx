@@ -9,7 +9,8 @@ import {
     useDisclosure,
     Divider
   } from "@chakra-ui/react";
-  import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import Logo from "../assets/logo-removebg-preview.png";
   
   const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -20,7 +21,8 @@ import {
         <Flex alignItems="center" justifyContent="space-between">
           {/* Logo or brand */}
           <Text fontSize="2xl" fontWeight="bold" color="white">
-            My Logo
+          {/* <img width={100} src={Logo}/>  */}
+          AlgoView
           </Text>
           {/* Navigation links (visible on larger screens) */}
          
