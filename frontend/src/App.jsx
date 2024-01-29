@@ -1,12 +1,12 @@
 import Stack from "./Components/Stack/Stack"
 import { ChakraProvider } from '@chakra-ui/react'
-import Navbar from './Components/Navbar';
+import LinearSearch from "./Pages/Searching/LinearSearch"
 function App() {
 
   return (
   <>
     <ChakraProvider>
-    <Navbar/>
+      <LinearSearch/>
     {/* <Stack/> */}
     </ChakraProvider>
   </>

@@ -2,11 +2,9 @@
 import {
     Box,
     Flex,
-    Spacer,
     HStack,
     VStack,
     Text,
-    Button,
     IconButton,
     useDisclosure,
   } from "@chakra-ui/react";
@@ -22,30 +20,15 @@ import {
           <Text fontSize="2xl" fontWeight="bold" color="white">
             My Logo
           </Text>
-  
-          {/* Hamburger menu button (visible on small screens) */}
-         
-  
           {/* Navigation links (visible on larger screens) */}
+         
           <HStack spacing={4} display={{ base: "none", md: "flex" }}>
             <Text color="white">Home</Text>
             <Text color="white">About</Text>
             <Text color="white">Services</Text>
             <Text color="white">Contact</Text>
           </HStack>
-  
-          {/* Spacer for flexible space */}
-          <Spacer />
-  
-          {/* Additional actions or buttons */}
-          <VStack spacing={4} alignItems="flex-end">
-            <Button colorScheme="teal" variant="solid">
-              Sign In
-            </Button>
-            <Button colorScheme="teal" variant="outline">
-              Sign Up
-            </Button>
-          </VStack>
+
         <IconButton
             display={{ base: "block", md: "none" }}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -64,6 +47,8 @@ import {
             <Text color="white">About</Text>
             <Text color="white">Services</Text>
             <Text color="white">Contact</Text>
+            <VStack spacing={4} alignItems="flex-end">
+          </VStack>
           </VStack>
         </Box>
       </Box>
