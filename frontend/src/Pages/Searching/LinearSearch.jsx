@@ -1,11 +1,39 @@
 import React, { useState } from 'react';
 import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Navbar from '../../Components/Navbar';
 
 const LinearSearch = () => {
   const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
   const [searchValue, setSearchValue] = useState('');
   const [searchIndex, setSearchIndex] = useState(-1);
+  const codeString = `public class LinearSearch {
+
+    public static int linearSearch(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target) {
+                return i; // Element found, return the index
+            }
+        }
+        return -1; // Element not found
+    }
+
+    public static void main(String[] args) {
+        int[] array = {5, 12, 8, 3, 9, 6};
+        int target = 9;
+
+        int result = linearSearch(array, target);
+
+        if (result != -1) {
+            System.out.println("Element found at index: " + result);
+        } else {
+            System.out.println("Element not found in the array.");
+        }
+    }
+}
+
+  `;
 
   const linearSearch = () => {
     for (let i = 0; i < array.length; i++) {
@@ -62,7 +90,11 @@ const LinearSearch = () => {
             Element not found.
           </Text>
         )}
+      <SyntaxHighlighter language="java" style={docco}>
+      {codeString}
+    </SyntaxHighlighter>
       </VStack>
+
     </>
   );
 };
