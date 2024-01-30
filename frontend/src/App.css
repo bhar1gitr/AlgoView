@@ -1,0 +1,6 @@
+.logo{
+    background: url(./assets/algo1.png) no-repeat;
+    height: 50px;
+    width: 100px;
+    background-size: contain;
+}

@@ -10,31 +10,22 @@ import {
     Divider
   } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import Logo from "../assets/AlgoView (4) (1).png";
-  
+import Logo from "../assets/algo1.png";
+import "../App.css";
   const Navbar = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-  
     return (
      <>
-       <Box bg="#0A1B1E" p={4}>
+       <Box bg="#0A1B1E" p={2}>
         <Flex alignItems="center" justifyContent="space-between">
-          {/* Logo or brand */}
-          <Text fontSize="2xl" fontWeight="bold" color="white">
-          <div style={{display:'flex'}}>
-          <img width={100} src={Logo}/> 
-          <div style={{textAlign:'start',margin:'auto 0px'}}>AlgoView</div>
-          </div>
-          </Text>
-          {/* Navigation links (visible on larger screens) */}
-         
+          <div className="logo"></div> 
+          <span>Algo</span>
           <HStack spacing={4} display={{ base: "none", md: "flex" }}>
             <Text color="white">Home</Text>
             <Text color="white">About</Text>
             <Text color="white">Services</Text>
             <Text color="white">Contact</Text>
           </HStack>
-
         <IconButton
             display={{ base: "block", md: "none" }}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
