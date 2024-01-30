@@ -1,3 +1,5 @@
+![Logo](https://res.cloudinary.com/dpackji5g/image/upload/v1706550002/logo-removebg-preview_jz0jbp.png)
+
 Certainly! Below is a sample README file that provides instructions on how to install Vite, run a Vite app, and introduces your platform "AlgoView" for DSA analysis:
 
 ```markdown
