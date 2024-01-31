@@ -24,12 +24,14 @@ import "../App.css";
         <Flex alignItems="center" justifyContent="space-between">
           <div className="logo"></div> 
           <span>Algo</span>
+          <div className="nav"> 
           <HStack spacing={4} display={{ base: "none", md: "flex" }}>
             <Text color="white">Home</Text>
             <Text color="white">About</Text>
             <Text color="white">Services</Text>
-            <Text color="white">Contact</Text>
+            <Text color="white">Contact</Text>           
           </HStack>
+          </div>
         <IconButton
             display={{ base: "block", md: "none" }}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -53,7 +55,7 @@ import "../App.css";
           </VStack>
         </Box>
       </Box>
-      <Divider orientation="horizontal"/>
+      {/*<Divider orientation="horizontal"/>*/}
      </>
     );
   };

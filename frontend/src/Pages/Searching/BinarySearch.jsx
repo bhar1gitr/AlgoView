@@ -3,7 +3,6 @@ import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
-
 const BinarySearch = () => {
     const [sortedArray, setSortedArray] = useState([1, 2, 3, 4, 5, 6, 7, 9]);
     const [searchValue, setSearchValue] = useState('');
