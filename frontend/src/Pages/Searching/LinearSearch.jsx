@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
+import { VStack, Text, Button, Box, Input, Flex, Select } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import Navbar from '../../Components/Navbar';
@@ -8,8 +8,12 @@ const LinearSearch = () => {
     const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
     const [searchValue, setSearchValue] = useState('');
     const [searchIndex, setSearchIndex] = useState(-1);
-    const [currentSearchIndex, setCurrentSearchIndex] = useState(-1); 
-    const codeString = `public class LinearSearch {
+    const [currentSearchIndex, setCurrentSearchIndex] = useState(-1);
+    const [selectedLanguage, setSelectedLanguage] = useState('java');
+
+    const codeMap = {
+        java: `// Java code
+public class LinearSearch {
     public static int linearSearch(int[] array, int target) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == target) {
@@ -18,6 +22,7 @@ const LinearSearch = () => {
         }
         return -1; // Element not found
     }
+
     public static void main(String[] args) {
         int[] array = {5, 12, 8, 3, 9, 6};
         int target = 9;
@@ -28,23 +33,56 @@ const LinearSearch = () => {
             System.out.println("Element not found in the array.");
         }
     }
-    }
-  `;
+}`,
+        python: `# Python code
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  # Element found, return the index
+    return -1  # Element not found
 
- const linearSearch = async () => {
-    for (let i = 0; i < array.length; i++) {
-        setCurrentSearchIndex(i);
-        if (array[i] === parseInt(searchValue)) {
-            setSearchIndex(i);
-            setCurrentSearchIndex(-1);
-            return;
+arr = [5, 12, 8, 3, 9, 6]
+target = 9
+result = linear_search(arr, target)
+if result != -1:
+    print(f"Element found at index: {result}")
+else:
+    print("Element not found in the array.")`,
+        javascript: `// JavaScript code
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) {
+            return i; // Element found, return the index
         }
-        // Use setTimeout to create a delay for visual effect
-        await new Promise((resolve) => setTimeout(resolve, 500));
     }
-    setSearchIndex(-1);
-    setCurrentSearchIndex(-1); 
-};
+    return -1; // Element not found
+}
+
+const arr = [5, 12, 8, 3, 9, 6];
+const target = 9;
+const result = linearSearch(arr, target);
+if (result !== -1) {
+    console.log("Element found at index: " + result);
+} else {
+    console.log("Element not found in the array.");
+}`
+    };
+
+    const linearSearch = async () => {
+        // ... (unchanged)
+        for (let i = 0; i < array.length; i++) {
+            setCurrentSearchIndex(i);
+            if (array[i] === parseInt(searchValue)) {
+                setSearchIndex(i);
+                setCurrentSearchIndex(-1);
+                return;
+            }
+            // Use setTimeout to create a delay for visual effect
+            await new Promise((resolve) => setTimeout(resolve, 500));
+        }
+        setSearchIndex(-1);
+        setCurrentSearchIndex(-1);
+    };
 
     return (
         <>
@@ -61,12 +99,18 @@ const LinearSearch = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <Button ml={2} bg="#6F8784" colorScheme="teal" onClick={linearSearch}>
-                        Search
-                    </Button>
+                    {/*<Select
+                        color="#FFFFFF"
+                        value={selectedLanguage}
+                        onChange={(e) => setSelectedLanguage(e.target.value)}
+                    >
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+    </Select>*/}
                 </Flex>
                 <Box>
-                {array.map((value, index) => (
+                    {array.map((value, index) => (
                         <Box
                             key={index}
                             display="inline-block"
@@ -103,14 +147,32 @@ const LinearSearch = () => {
                         Element not found.
                     </Text>
                 )}
-                <Box width="100%" height="10%">
-                    <SyntaxHighlighter language="java" style={docco}>
-                        {codeString}
+                
+                <Select
+                        color="#fff"
+                        value={selectedLanguage}
+                        onChange={(e) => setSelectedLanguage(e.target.value)}
+                        
+                        
+                        
+                    >
+                        <option value="java"  >Java</option>
+                        <option value="python" >Python</option>
+                        <option value="javascript" >JavaScript</option>
+                    </Select>
+                <Box width="80%" height="10%">
+                    <SyntaxHighlighter language={selectedLanguage} style={docco} >
+                        {codeMap[selectedLanguage]}
                     </SyntaxHighlighter>
                 </Box>
+                
+                
+                
             </VStack>
         </>
     );
 };
 
 export default LinearSearch;
+
+
