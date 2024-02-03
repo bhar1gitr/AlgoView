@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -11,6 +11,8 @@ const BubbleSort = () => {
     const [animations, setAnimations] = useState([]);
     const [sortedArray, setSortedArray] = useState([]);
     const [randomArraySize, setRandomArraySize] = useState(8);
+
+    const audioRef = useRef(null);
 
     const generateRandomArray = () => {
         const randomArray = Array.from({ length: randomArraySize }, () => Math.floor(Math.random() * 20) + 1);
@@ -33,6 +35,9 @@ const BubbleSort = () => {
 
                 if (array[j] > array[j + 1]) {
                     setCurrentSwap([j, j + 1]);
+                    audioRef.current.src = '/sounds/swappingsound.mp3';
+                    audioRef.current.play();
+
                     await new Promise((resolve) => setTimeout(resolve, 800));
 
                     const temp = array[j];
@@ -111,6 +116,7 @@ const BubbleSort = () => {
                         </Box>
                     ))}
                 </Box>
+                <audio ref={audioRef} src="" />
                 <Box width="100%" height="10%">
                     <SyntaxHighlighter language="java" style={docco}>
                         {`
