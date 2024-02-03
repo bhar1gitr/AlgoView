@@ -4,4 +4,9 @@ import react from '@vitejs/plugin-react-swc'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  resolve: {
+    alias: {
+      '/@/': __dirname + '/src', // Adjust this if needed
+    },
+  },
 })
