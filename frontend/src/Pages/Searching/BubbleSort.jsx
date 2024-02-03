@@ -120,28 +120,27 @@ const BubbleSort = () => {
                 <Box width="100%" height="10%">
                     <SyntaxHighlighter language="java" style={docco}>
                         {`
-public class BubbleSort {
-    public static void bubbleSort(int[] array) {
-        int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
-        }
-    }
-    
-    public static void main(String[] args) {
-        int[] array = {1, 2, 3, 4, 5, 6, 7, 9};
-        bubbleSort(array);
-        for (int num : array) {
-            System.out.print(num + " ");
-        }
-    }
-}
+                            public class BubbleSort {
+                                public static void bubbleSort(int[] array) {
+                                    int n = array.length;
+                                    for (int i = 0; i < n - 1; i++) {
+                                        for (int j = 0; j < n - i - 1; j++) {
+                                            if (array[j] > array[j + 1]) {
+                                                int temp = array[j];
+                                                array[j] = array[j + 1];
+                                                array[j + 1] = temp;
+                                            }
+                                        }
+                                    }
+                                }                                
+                                public static void main(String[] args) {
+                                    int[] array = {1, 2, 3, 4, 5, 6, 7, 9};
+                                    bubbleSort(array);
+                                    for (int num : array) {
+                                        System.out.print(num + " ");
+                                    }
+                                }
+                            }
                         `}
                     </SyntaxHighlighter>
                 </Box>
