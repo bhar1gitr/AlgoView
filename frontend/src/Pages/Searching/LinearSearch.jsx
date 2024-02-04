@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { VStack, Text, Button, Box, Input, Flex, Select } from '@chakra-ui/react';
+import { VStack, Text, Box, Input, Flex, Select } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-/*import Navbar from '../../Components/Navbar';*/
 
 const LinearSearch = () => {
     const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
@@ -69,7 +68,6 @@ if (result !== -1) {
     };
 
     const linearSearch = async () => {
-        // ... (unchanged)
         for (let i = 0; i < array.length; i++) {
             setCurrentSearchIndex(i);
             if (array[i] === parseInt(searchValue)) {
@@ -77,7 +75,6 @@ if (result !== -1) {
                 setCurrentSearchIndex(-1);
                 return;
             }
-            // Use setTimeout to create a delay for visual effect
             await new Promise((resolve) => setTimeout(resolve, 500));
         }
         setSearchIndex(-1);
@@ -86,7 +83,6 @@ if (result !== -1) {
 
     return (
         <>
-            {/*<Navbar />*/}
             <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} align="center">
                 <Text color="#EAEBEA" fontSize="xl" fontWeight="bold">
                     Linear Search Visualization
@@ -99,15 +95,6 @@ if (result !== -1) {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    {/*<Select
-                        color="#FFFFFF"
-                        value={selectedLanguage}
-                        onChange={(e) => setSelectedLanguage(e.target.value)}
-                    >
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
-                        <option value="javascript">JavaScript</option>
-    </Select>*/}
                 </Flex>
                 <Box>
                     {array.map((value, index) => (
@@ -120,17 +107,17 @@ if (result !== -1) {
                             border="1px solid"
                             borderColor={
                                 currentSearchIndex === index
-                                    ? 'orange.500' // Color for currently searching element
+                                    ? 'orange.500'
                                     : searchIndex === index
-                                    ? 'teal.500' // Color for found element
-                                    : 'gray.300' // Default color
+                                        ? 'teal.500'
+                                        : 'gray.300'
                             }
                             bg={
                                 currentSearchIndex === index
-                                    ? 'orange.100' // Background color for currently searching element
+                                    ? 'orange.100'
                                     : searchIndex === index
-                                    ? 'teal.50' // Background color for found element
-                                    : 'white' // Default background color
+                                        ? 'teal.50'
+                                        : 'white'
                             }
                             ml={2}
                         >
@@ -149,30 +136,22 @@ if (result !== -1) {
                 )}
                 
                 <Select
-                        color="#fff"
-                        value={selectedLanguage}
-                        onChange={(e) => setSelectedLanguage(e.target.value)}
-                        
-                        
-                        
-                    >
-                        <option value="java"  >Java</option>
-                        <option value="python" >Python</option>
-                        <option value="javascript" >JavaScript</option>
-                    </Select>
+                    color="#fff"
+                    value={selectedLanguage}
+                    onChange={(e) => setSelectedLanguage(e.target.value)}
+                >
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                    <option value="javascript">JavaScript</option>
+                </Select>
                 <Box width="80%" height="10%">
                     <SyntaxHighlighter language={selectedLanguage} style={docco} >
                         {codeMap[selectedLanguage]}
                     </SyntaxHighlighter>
                 </Box>
-                
-                
-                
             </VStack>
         </>
     );
 };
 
 export default LinearSearch;
-
-
