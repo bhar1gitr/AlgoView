@@ -11,9 +11,8 @@ const BubbleSort = () => {
     const [animations, setAnimations] = useState([]);
     const [sortedArray, setSortedArray] = useState([]);
     const [randomArraySize, setRandomArraySize] = useState(8);
-
     const audioRef = useRef(null);
-
+    
     const generateRandomArray = () => {
         const randomArray = Array.from({ length: randomArraySize }, () => Math.floor(Math.random() * 20) + 1);
         setArray(randomArray);
