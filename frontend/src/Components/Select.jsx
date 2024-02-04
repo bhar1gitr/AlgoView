@@ -1,22 +1,22 @@
 import React from 'react';
 import { Select, HStack } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Dropdown = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <HStack spacing={4}>
-      <Select placeholder="Search">
-        <option value="linear-search">
-          {/* <Link to="/linear-search">Linear Search</Link> */}
-        </option>
-        <option value="binary-search">
-          {/* <Link to="/binary-search">Binary Search</Link> */}
-        </option>
+      <Select placeholder="Search" onChange={(e) => handleNavigation(e.target.value)}>
+        <option value="/linear-search">Linear Search</option>
+        <option value="/binary-search">Binary Search</option>
       </Select>
-      <Select placeholder="Sort">
-        <option value="bubble-sort">
-          {/* <Link to="/bubble-sort">Bubble Sort</Link> */}
-        </option>
+      <Select placeholder="Sort" onChange={(e) => handleNavigation(e.target.value)}>
+        <option value="/bubble-sort">Bubble Sort</option>
       </Select>
     </HStack>
   );

@@ -48,7 +48,6 @@ const LinearSearch = () => {
 
     return (
         <>
-            <Navbar />
             <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} align="center">
                 <Text color="#EAEBEA" fontSize="xl" fontWeight="bold">
                     Linear Search Visualization
