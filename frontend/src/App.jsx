@@ -2,7 +2,7 @@ import Stack from "./Components/Stack/Stack"
 import { ChakraProvider } from '@chakra-ui/react'
 import LinearSearch from "./Pages/Searching/LinearSearch"
 import BinarySearch from "./Pages/Searching/BinarySearch"
-import BubbleSort from "./Pages/Searching/BubbleSort"
+import BubbleSort from "./Pages/Sorting/BubbleSort"
 import HomePage from "./Pages/Home/HomePage"
 import Select from "./Components/Select"
 
