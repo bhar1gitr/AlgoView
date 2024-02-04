@@ -1,16 +1,12 @@
 import React from 'react';
 import { Select, HStack } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-
 import "./compo.css"
-
 const Dropdown = () => {
   const navigate = useNavigate();
-
   const handleNavigation = (path) => {
     navigate(path);
   };
-
   return (
     <HStack className='-stack' bg="#0A1B1E" style={{padding:'20px 20px', overflowX: 'auto'}} spacing={4} align="center">
       <Select

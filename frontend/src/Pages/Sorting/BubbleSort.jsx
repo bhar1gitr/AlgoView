@@ -2,6 +2,8 @@ import React, { useState, useRef } from 'react';
 import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useToast } from '@chakra-ui/react';
+
 
 const BubbleSort = () => {
     const [array, setArray] = useState([1, 2, 3, 4, 5, 6, 7, 9]);
@@ -11,11 +13,24 @@ const BubbleSort = () => {
     const [animations, setAnimations] = useState([]);
     const [sortedArray, setSortedArray] = useState([]);
     const [randomArraySize, setRandomArraySize] = useState(8);
-
     const audioRef = useRef(null);
+    const toast = useToast();
 
     const generateRandomArray = () => {
-        const randomArray = Array.from({ length: randomArraySize }, () => Math.floor(Math.random() * 20) + 1);
+        const maxSize = 20; // Set your desired limit for the array size
+        const size = Math.min(randomArraySize, maxSize);
+
+        if (randomArraySize > maxSize) {
+            toast({
+                title: 'Array Size Limit',
+                description: `Array size has been limited to ${maxSize}.`,
+                status: 'warning',
+                duration: 3000, // Toast message will disappear after 3 seconds
+                isClosable: true,
+            });
+        }
+
+        const randomArray = Array.from({ length: size }, () => Math.floor(Math.random() * 20) + 1);
         setArray(randomArray);
         setSortedArray([]);
         setAnimations([]);
@@ -27,28 +42,22 @@ const BubbleSort = () => {
         setIsSorting(true);
         const n = array.length;
         const animations = [];
-
         for (let i = 0; i < n - 1; i++) {
             for (let j = 0; j < n - i - 1; j++) {
                 setCurrentComparison([j, j + 1]);
                 await new Promise((resolve) => setTimeout(resolve, 800));
-
+                audioRef.current.src = '/sounds/swappingsound.mp3';
+                audioRef.current.play();
                 if (array[j] > array[j + 1]) {
                     setCurrentSwap([j, j + 1]);
-                    audioRef.current.src = '/sounds/swappingsound.mp3';
-                    audioRef.current.play();
-
                     await new Promise((resolve) => setTimeout(resolve, 800));
-
                     const temp = array[j];
                     array[j] = array[j + 1];
                     array[j + 1] = temp;
-
                     animations.push([...array]);
                 }
             }
         }
-
         setCurrentComparison([]);
         setCurrentSwap([]);
         setIsSorting(false);

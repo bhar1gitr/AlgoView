@@ -8,7 +8,7 @@ const LinearSearch = () => {
     const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
     const [searchValue, setSearchValue] = useState('');
     const [searchIndex, setSearchIndex] = useState(-1);
-    const [currentSearchIndex, setCurrentSearchIndex] = useState(-1); 
+    const [currentSearchIndex, setCurrentSearchIndex] = useState(-1);
     const codeString = `public class LinearSearch {
     public static int linearSearch(int[] array, int target) {
         for (int i = 0; i < array.length; i++) {
@@ -31,20 +31,20 @@ const LinearSearch = () => {
     }
   `;
 
- const linearSearch = async () => {
-    for (let i = 0; i < array.length; i++) {
-        setCurrentSearchIndex(i);
-        if (array[i] === parseInt(searchValue)) {
-            setSearchIndex(i);
-            setCurrentSearchIndex(-1);
-            return;
+    const linearSearch = async () => {
+        for (let i = 0; i < array.length; i++) {
+            setCurrentSearchIndex(i);
+            if (array[i] === parseInt(searchValue)) {
+                setSearchIndex(i);
+                setCurrentSearchIndex(-1);
+                return;
+            }
+            // Use setTimeout to create a delay for visual effect
+            await new Promise((resolve) => setTimeout(resolve, 500));
         }
-        // Use setTimeout to create a delay for visual effect
-        await new Promise((resolve) => setTimeout(resolve, 500));
-    }
-    setSearchIndex(-1);
-    setCurrentSearchIndex(-1); 
-};
+        setSearchIndex(-1);
+        setCurrentSearchIndex(-1);
+    };
 
     return (
         <>
@@ -65,7 +65,7 @@ const LinearSearch = () => {
                     </Button>
                 </Flex>
                 <Box>
-                {array.map((value, index) => (
+                    {array.map((value, index) => (
                         <Box
                             key={index}
                             display="inline-block"
@@ -77,15 +77,15 @@ const LinearSearch = () => {
                                 currentSearchIndex === index
                                     ? 'orange.500' // Color for currently searching element
                                     : searchIndex === index
-                                    ? 'teal.500' // Color for found element
-                                    : 'gray.300' // Default color
+                                        ? 'teal.500' // Color for found element
+                                        : 'gray.300' // Default color
                             }
                             bg={
                                 currentSearchIndex === index
                                     ? 'orange.100' // Background color for currently searching element
                                     : searchIndex === index
-                                    ? 'teal.50' // Background color for found element
-                                    : 'white' // Default background color
+                                        ? 'teal.50' // Background color for found element
+                                        : 'white' // Default background color
                             }
                             ml={2}
                         >
