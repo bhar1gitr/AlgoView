@@ -5,7 +5,7 @@ import BinarySearch from "./Pages/Searching/BinarySearch"
 import BubbleSort from "./Pages/Sorting/BubbleSort"
 import HomePage from "./Pages/Home/HomePage"
 import Select from "./Components/Select"
-
+import InsertionSort from "./Pages/Sorting/InsertionSort"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar"
 
@@ -23,6 +23,8 @@ function App() {
             <Route path='/linear-search' element={<LinearSearch />} />
             <Route path='/binary-search' element={<BinarySearch />} />
             <Route path='/bubble-sort' element={<BubbleSort />} />
+            <Route path='/insertion-sort' element={<InsertionSort />} />
+
           </Routes>
         </ChakraProvider>
       </Router>
