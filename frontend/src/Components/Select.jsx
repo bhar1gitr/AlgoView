@@ -12,7 +12,7 @@ const Dropdown = () => {
   };
 
   return (
-    <HStack bg="#0A1B1E" style={{padding:'20px 20px'}} spacing={4} align="center">
+    <HStack className='-stack' bg="#0A1B1E" style={{padding:'20px 20px', overflowX: 'auto'}} spacing={4} align="center">
       <Select
         className='select'
         placeholder="Search"
