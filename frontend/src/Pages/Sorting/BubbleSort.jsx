@@ -14,7 +14,9 @@ const BubbleSort = () => {
     const [sortedArray, setSortedArray] = useState([]);
     const [randomArraySize, setRandomArraySize] = useState(8);
     const audioRef = useRef(null);
+
     const toast = useToast();
+
 
     const generateRandomArray = () => {
         const maxSize = 20; // Set your desired limit for the array size
