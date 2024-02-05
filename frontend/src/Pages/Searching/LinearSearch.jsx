@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { VStack, Text, Box, Input, Flex, Select } from '@chakra-ui/react';
+import React, { useState, useEffect } from 'react';
+import { Button, VStack, Text, Box, Input, Flex, Select, SimpleGrid, GridItem } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -9,6 +9,11 @@ const LinearSearch = () => {
     const [searchIndex, setSearchIndex] = useState(-1);
     const [currentSearchIndex, setCurrentSearchIndex] = useState(-1);
     const [selectedLanguage, setSelectedLanguage] = useState('java');
+    const [selectedCard, setSelectedCard] = useState(null);
+
+    useEffect(() => {
+        setSelectedCard('java'); // Set default selected card to 'Java'
+    }, []);
 
     const codeMap = {
         java: `// Java code
@@ -64,7 +69,12 @@ if (result !== -1) {
     console.log("Element found at index: " + result);
 } else {
     console.log("Element not found in the array.");
-}`
+}` };
+
+    const timeComplexityMap = {
+        java: 'Time Complexity: O(n) - Linear Search has a time complexity of O(n) in the worst case, where "n" is the size of the array.',
+        python: 'Time Complexity: O(n) - The time complexity of Linear Search in Python is O(n) in the worst case, where "n" is the length of the array.',
+        javascript: 'Time Complexity: O(n) - In JavaScript, Linear Search has a time complexity of O(n) in the worst case, where "n" is the length of the array.'
     };
 
     const linearSearch = async () => {
@@ -81,6 +91,11 @@ if (result !== -1) {
         setCurrentSearchIndex(-1);
     };
 
+    const handleLanguageChange = (lang) => {
+        setSelectedLanguage(lang);
+        setSelectedCard(lang);
+    };
+
     return (
         <>
             <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} align="center">
@@ -95,6 +110,12 @@ if (result !== -1) {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
+                    <Button
+                        colorScheme="teal"
+                        onClick={linearSearch}
+                    >
+                        Search
+                    </Button>
                 </Flex>
                 <Box>
                     {array.map((value, index) => (
@@ -109,15 +130,15 @@ if (result !== -1) {
                                 currentSearchIndex === index
                                     ? 'orange.500'
                                     : searchIndex === index
-                                        ? 'teal.500'
-                                        : 'gray.300'
+                                    ? 'teal.500'
+                                    : 'gray.300'
                             }
                             bg={
                                 currentSearchIndex === index
                                     ? 'orange.100'
                                     : searchIndex === index
-                                        ? 'teal.50'
-                                        : 'white'
+                                    ? 'teal.50'
+                                    : 'white'
                             }
                             ml={2}
                         >
@@ -125,6 +146,7 @@ if (result !== -1) {
                         </Box>
                     ))}
                 </Box>
+
                 {searchIndex !== -1 ? (
                     <Text mt={2} color="teal.500">
                         Element found at index {searchIndex}.
@@ -134,21 +156,30 @@ if (result !== -1) {
                         Element not found.
                     </Text>
                 )}
-                
+
                 <Select
                     color="#fff"
                     value={selectedLanguage}
-                    onChange={(e) => setSelectedLanguage(e.target.value)}
+                    onChange={(e) => handleLanguageChange(e.target.value)}
                 >
                     <option value="java">Java</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
                 </Select>
-                <Box width="80%" height="10%">
-                    <SyntaxHighlighter language={selectedLanguage} style={docco} >
-                        {codeMap[selectedLanguage]}
-                    </SyntaxHighlighter>
-                </Box>
+
+                {selectedCard && (
+                    <Box p={4} borderWidth="1px" borderRadius="md" bg="#2D3C3F">
+                        <Text mt={2} color="#EAEBEA" fontSize="sm">
+                            Code:
+                        </Text>
+                        <SyntaxHighlighter language={selectedLanguage} style={docco} >
+                            {codeMap[selectedLanguage]}
+                        </SyntaxHighlighter>
+                        <Text mt={2} color="#EAEBEA" fontSize="sm">
+                            {timeComplexityMap[selectedLanguage]}
+                        </Text>
+                    </Box>
+                )}
             </VStack>
         </>
     );
