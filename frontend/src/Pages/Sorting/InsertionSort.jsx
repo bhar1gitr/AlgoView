@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { VStack, Text, Button, Box, Input, Flex } from '@chakra-ui/react';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { useToast } from '@chakra-ui/react';
 
 const InsertionSort = () => {
     const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
@@ -11,10 +12,27 @@ const InsertionSort = () => {
     const [randomArraySize, setRandomArraySize] = useState(7);
     const audioRef = useRef(null);
 
+    const toast = useToast();
     const generateRandomArray = () => {
-        const randomArray = Array.from({ length: randomArraySize }, () => Math.floor(Math.random() * 20) + 1);
+        const maxSize = 20; // Set your desired limit for the array size
+        const size = Math.min(randomArraySize, maxSize);
+
+        if (randomArraySize > maxSize) {
+            toast({
+                title: 'Array Size Limit',
+                description: `Array size has been limited to ${maxSize}.`,
+                status: 'warning',
+                duration: 3000, // Toast message will disappear after 3 seconds
+                isClosable: true,
+            });
+        }
+
+        const randomArray = Array.from({ length: size }, () => Math.floor(Math.random() * 20) + 1);
         setArray(randomArray);
         setSortedArray([]);
+        setAnimations([]);
+        setCurrentComparison([]);
+        setCurrentSwap([]);
     };
 
     const insertionSort = async () => {
