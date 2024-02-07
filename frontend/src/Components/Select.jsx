@@ -27,7 +27,7 @@ const Dropdown = () => {
         onChange={(e) => handleNavigation(e.target.value)}
       >
         <option value="/bubble-sort">Bubble Sort</option>
-        <option value="/insertion-sort">insertion Sort</option>
+        <option value="/insertion-sort">Insertion Sort</option>
       </Select>
     </HStack>
   );

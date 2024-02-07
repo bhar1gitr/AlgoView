@@ -98,7 +98,7 @@ if (result !== -1) {
 
     return (
         <>
-            <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} align="center">
+            <VStack height="max-content" bg="#0A1B1E" p={20} spacing={4} >
                 <Text color="#EAEBEA" fontSize="xl" fontWeight="bold">
                     Linear Search Visualization
                 </Text>
@@ -157,18 +157,21 @@ if (result !== -1) {
                     </Text>
                 )}
 
+                <div>
                 <Select
                     color="#fff"
                     value={selectedLanguage}
                     onChange={(e) => handleLanguageChange(e.target.value)}
+                    className='language'
                 >
                     <option value="java">Java</option>
                     <option value="python">Python</option>
                     <option value="javascript">JavaScript</option>
                 </Select>
+                </div>
 
                 {selectedCard && (
-                    <Box p={4} borderWidth="1px" borderRadius="md" bg="#2D3C3F">
+                    <Box p={4} borderWidth="1px" borderRadius="md" bg="#2D3C3F" width={900}>
                         <Text mt={2} color="#EAEBEA" fontSize="sm">
                             Code:
                         </Text>
