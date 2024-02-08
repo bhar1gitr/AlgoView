@@ -6,8 +6,9 @@ import BubbleSort from "./Pages/Sorting/BubbleSort"
 import HomePage from "./Pages/Home/HomePage"
 import Select from "./Components/Select"
 import InsertionSort from "./Pages/Sorting/InsertionSort"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar"
+import Footer from "./Components/Footer"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
 
@@ -15,7 +16,6 @@ function App() {
     <>
       <Router>
         <ChakraProvider>
-          {/* <Stack/> */}
           <Navbar />
           <Select />
           <Routes>
@@ -24,8 +24,8 @@ function App() {
             <Route path='/binary-search' element={<BinarySearch />} />
             <Route path='/bubble-sort' element={<BubbleSort />} />
             <Route path='/insertion-sort' element={<InsertionSort />} />
-
           </Routes>
+          <Footer/>
         </ChakraProvider>
       </Router>
     </>
