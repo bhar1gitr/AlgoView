@@ -24,7 +24,6 @@ function App() {
             <Route path='/binary-search' element={<BinarySearch />} />
             <Route path='/bubble-sort' element={<BubbleSort />} />
             <Route path='/insertion-sort' element={<InsertionSort />} />
-
           </Routes>
           <Footer/>
         </ChakraProvider>
