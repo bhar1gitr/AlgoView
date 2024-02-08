@@ -16,7 +16,6 @@ function App() {
     <>
       <Router>
         <ChakraProvider>
-          {/* <Stack/> */}
           <Navbar />
           <Select />
           <Routes>
