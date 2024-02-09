@@ -80,7 +80,7 @@ const InsertionSort = () => {
                         }}
                     />
                     <Button
-                        ml={5}
+                        ml={2}
                         bg="#6F8784"
                         width="150px"
                         colorScheme="teal"
@@ -89,13 +89,11 @@ const InsertionSort = () => {
                     >
                         Random Array
                     </Button>
-                </Flex>
-                <Flex>
                     <Button
                         ml={2}
                         bg="#6F8784"
                         colorScheme="teal"
-                        onClick={insertionSort}
+                        onClick={bubbleSort}
                         disabled={isSorting}
                     >
                         Sort

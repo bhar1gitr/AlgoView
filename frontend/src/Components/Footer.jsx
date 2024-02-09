@@ -13,7 +13,6 @@ const Footer = () => {
     >
       <VStack spacing={2}>
         <Text fontSize="sm">© 2024 AlgoView</Text>
-       
       </VStack>
     </Box>
   );

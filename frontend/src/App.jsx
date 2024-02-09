@@ -9,6 +9,7 @@ import InsertionSort from "./Pages/Sorting/InsertionSort"
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TreeTraversal from "./Pages/Tree/Traversal"
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path='/binary-search' element={<BinarySearch />} />
             <Route path='/bubble-sort' element={<BubbleSort />} />
             <Route path='/insertion-sort' element={<InsertionSort />} />
+            <Route path="t" element={<TreeTraversal></TreeTraversal>}/>
           </Routes>
           <Footer/>
         </ChakraProvider>
