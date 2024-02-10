@@ -85,11 +85,9 @@ const BubbleSort = () => {
                           opacity: '0.7',   // Adjust the opacity if needed
                       }}
                     />
-                    <Button ml={5} bg="#6F8784"  width="150px" colorScheme="teal" fontSize={15} onClick={generateRandomArray} >
+                    <Button ml={2} bg="#6F8784"  width="150px" colorScheme="teal" fontSize={15} onClick={generateRandomArray} >
                         Random Array
                     </Button>
-                </Flex>
-                <Flex>
                     <Button
                         ml={2}
                         bg="#6F8784"
