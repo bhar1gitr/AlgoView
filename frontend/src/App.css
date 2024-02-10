@@ -13,8 +13,10 @@
 
 .home-hero .left-move marquee span{
     padding: 40px;
-    background-color: red;
+    background: rgb(111,135,132);
+    background: linear-gradient(90deg, rgba(111,135,132,1) 0%, rgba(218,243,233,1) 50%, rgba(234,235,234,1) 100%);
     clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    color: black;
 }
 
 .logo{

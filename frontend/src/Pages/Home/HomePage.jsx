@@ -26,22 +26,17 @@ const RepoStats = () => {
           <Text color='white'>The ultimate resource to prepare for DSA. Everything you need, in one streamlined platform.</Text>
           <Button colorScheme="teal" variant="solid" size="lg" marginTop='20px'>Get Started</Button>
         </Box>
-        <Box className='left-move' p="4" color='white' width="50%">
-          <marquee scrollamount="7"><span>queue</span></marquee>
-          <marquee scrollamount="6"><span>graphs</span></marquee>
-          <marquee scrollamount="2"><span>graphs</span></marquee>
-          <marquee scrollamount="5"><span>graphs</span></marquee>
-          <marquee scrollamount="2"><span>graphs</span></marquee>
-          <marquee scrollamount="4"><span>graphs</span></marquee>
-          <marquee scrollamount="5"><span>graphs</span></marquee>
-          <marquee scrollamount="4"><span>graphs</span></marquee>
-          <marquee scrollamount="5"><span>graphs</span></marquee>
-          <marquee scrollamount="4"><span>graphs</span></marquee>
-          {/* <marquee scrollamount="9"><span>graphs</span></marquee>
-          <marquee scrollamount="8"><span>graphs</span></marquee>
-          <marquee scrollamount="5"><span>graphs</span></marquee>
-          <marquee scrollamount="4"><span>graphs</span></marquee>
-          <marquee scrollamount="7"><span>graphs</span></marquee> */}
+        <Box className='left-move' color='white' width="50%">
+          <marquee scrollamount="7"><span>#queue</span></marquee>
+          <marquee scrollamount="6"><span>#graphs</span></marquee>
+          <marquee scrollamount="2"><span>#graphs</span></marquee>
+          <marquee scrollamount="5"><span>#graphs</span></marquee>
+          <marquee scrollamount="2"><span>#graphs</span></marquee>
+          <marquee scrollamount="4"><span>#graphs</span></marquee>
+          <marquee scrollamount="5"><span>#graphs</span></marquee>
+          <marquee scrollamount="4"><span>#graphs</span></marquee>
+          <marquee scrollamount="5"><span>#graphs</span></marquee>
+          <marquee scrollamount="4"><span>#graphs</span></marquee>
         </Box>
       </Flex>
 
