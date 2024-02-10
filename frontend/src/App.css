@@ -1,5 +1,15 @@
-*{
-    /* background: black; */
+.home-hero .left-move{
+    border-top-left-radius: 47%;
+    border-bottom-left-radius: 47%;
+    height: 400px;
+    overflow: hidden;
+    background-color: #0c2a2a;
+}
+
+.home-hero .left-move marquee span{
+    padding: 20px;
+    background-color: red;
+    border-radius: 400%;
 }
 
 .logo{
