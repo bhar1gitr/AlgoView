@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Box, Flex, Heading, Text, Spinner } from '@chakra-ui/react';
+import { Box, Flex, Heading, Text, Spinner, Button } from '@chakra-ui/react';
 
 const RepoStats = () => {
   const [stats, setStats] = useState(null);
@@ -20,21 +20,28 @@ const RepoStats = () => {
   }
   return (
     <>
-      <Flex className='home-hero' flex="0 0 300px" bg='#0A1B1E'>
-        <Box width='50%'>
-          j
+      <Flex className='home-hero' flex="0 0 300px" paddingTop='40px' paddingBottom='40px' bg='#0A1B1E'>
+        <Box width='50%' padding='140px 100px'>
+          <Heading margin='10px 0px' as="h2" size="lg" color='white'>AlgoView</Heading>
+          <Text color='white'>The ultimate resource to prepare for DSA. Everything you need, in one streamlined platform.</Text>
+          <Button colorScheme="teal" variant="solid" size="lg" marginTop='20px'>Get Started</Button>
         </Box>
-        <Box className='left-move' color='white' width="50%">
-          <div><marquee scrollamount="1">stack</marquee></div>
+        <Box className='left-move' p="4" color='white' width="50%">
           <marquee scrollamount="7"><span>queue</span></marquee>
           <marquee scrollamount="6"><span>graphs</span></marquee>
+          <marquee scrollamount="2"><span>graphs</span></marquee>
+          <marquee scrollamount="5"><span>graphs</span></marquee>
+          <marquee scrollamount="2"><span>graphs</span></marquee>
           <marquee scrollamount="4"><span>graphs</span></marquee>
           <marquee scrollamount="5"><span>graphs</span></marquee>
-          <marquee scrollamount="6"><span>graphs</span></marquee>
           <marquee scrollamount="4"><span>graphs</span></marquee>
           <marquee scrollamount="5"><span>graphs</span></marquee>
           <marquee scrollamount="4"><span>graphs</span></marquee>
+          {/* <marquee scrollamount="9"><span>graphs</span></marquee>
+          <marquee scrollamount="8"><span>graphs</span></marquee>
           <marquee scrollamount="5"><span>graphs</span></marquee>
+          <marquee scrollamount="4"><span>graphs</span></marquee>
+          <marquee scrollamount="7"><span>graphs</span></marquee> */}
         </Box>
       </Flex>
 
