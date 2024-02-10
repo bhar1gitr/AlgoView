@@ -8,6 +8,7 @@ import Select from "./Components/Select"
 import InsertionSort from "./Pages/Sorting/InsertionSort"
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
+import FlipCards from "./cards/TimeComplexity"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TreeTraversal from "./Pages/Tree/Traversal"
 
@@ -26,6 +27,9 @@ function App() {
             <Route path='/bubble-sort' element={<BubbleSort />} />
             <Route path='/insertion-sort' element={<InsertionSort />} />
             <Route path="t" element={<TreeTraversal></TreeTraversal>}/>
+            <Route path='/insertion-sort' element={<InsertionSort />} />
+            
+            <Route path='/time-comp' element={<FlipCards/>} />
           </Routes>
           <Footer/>
         </ChakraProvider>

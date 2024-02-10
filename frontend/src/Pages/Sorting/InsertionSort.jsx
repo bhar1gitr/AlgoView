@@ -30,54 +30,50 @@ const InsertionSort = () => {
         const randomArray = Array.from({ length: size }, () => Math.floor(Math.random() * 20) + 1);
         setArray(randomArray);
         setSortedArray([]);
-        setAnimations([]);
-        setCurrentComparison([]);
-        setCurrentSwap([]);
+        setCurrentSortIndex(-1);
     };
 
     const insertionSort = async () => {
-      setIsSorting(true);
-      const n = array.length;
-  
-      for (let i = 1; i < n; i++) {
-          let key = array[i];
-          let j = i - 1;
-  
-          setCurrentSortIndex(i);
-  
-          while (j >= 0 && array[j] > key) {
-              setArray((prevArray) => {
-                  const newArray = [...prevArray];
-                  newArray[j + 1] = newArray[j];
-                  newArray[j] = key;
-                  return newArray;
-              });
-  
-              audioRef.current.src = '/sounds/swappingsound.mp3';
-              audioRef.current.play();
-  
-              await new Promise((resolve) => setTimeout(resolve, 800));
-  
-              j = j - 1;
-          }
-  
-          // Place the key element in its correct position
-          setArray((prevArray) => {
-              const newArray = [...prevArray];
-              newArray[j + 1] = key;
-              return newArray;
-          });
-  
-          // Use setTimeout to create a delay for visual effect
-          await new Promise((resolve) => setTimeout(resolve, 800));
-      }
-  
-      setCurrentSortIndex(-1);
-      setIsSorting(false);
-      setSortedArray([...array]);
-  };
-  
-  
+        setIsSorting(true);
+        const n = array.length;
+
+        for (let i = 1; i < n; i++) {
+            let key = array[i];
+            let j = i - 1;
+
+            setCurrentSortIndex(i);
+
+            while (j >= 0 && array[j] > key) {
+                setArray((prevArray) => {
+                    const newArray = [...prevArray];
+                    newArray[j + 1] = newArray[j];
+                    newArray[j] = key;
+                    return newArray;
+                });
+
+                audioRef.current.src = '/sounds/swappingsound.mp3';
+                audioRef.current.play();
+
+                await new Promise((resolve) => setTimeout(resolve, 800));
+
+                j = j - 1;
+            }
+
+            // Place the key element in its correct position
+            setArray((prevArray) => {
+                const newArray = [...prevArray];
+                newArray[j + 1] = key;
+                return newArray;
+            });
+
+            // Use setTimeout to create a delay for visual effect
+            await new Promise((resolve) => setTimeout(resolve, 800));
+        }
+
+        setCurrentSortIndex(-1);
+        setIsSorting(false);
+        setSortedArray([...array]);
+    };
 
     return (
         <>
@@ -111,7 +107,7 @@ const InsertionSort = () => {
                         ml={2}
                         bg="#6F8784"
                         colorScheme="teal"
-                        onClick={bubbleSort}
+                        onClick={insertionSort}
                         disabled={isSorting}
                     >
                         Sort
