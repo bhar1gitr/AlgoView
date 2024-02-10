@@ -29,6 +29,15 @@ const Dropdown = () => {
         <option value="/bubble-sort">Bubble Sort</option>
         <option value="/insertion-sort">Insertion Sort</option>
       </Select>
+      <Select
+        className='select'
+        placeholder="time complexity"
+        iconColor="white"
+        width={{ base: '100%', md: 'auto' }}
+        onChange={(e) => handleNavigation(e.target.value)}
+      >
+        <option value="/time-comp">TimeComplexity</option>
+      </Select>
     </HStack>
   );
 };
