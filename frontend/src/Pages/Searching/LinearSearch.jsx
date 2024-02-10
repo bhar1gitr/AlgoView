@@ -3,7 +3,9 @@ import { Button, VStack, Text, Box, Input, Flex, Select, SimpleGrid, GridItem } 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+
 const LinearSearch = () => {
+    
     const [array, setArray] = useState([4, 2, 7, 1, 9, 5, 3]);
     const [searchValue, setSearchValue] = useState('');
     const [searchIndex, setSearchIndex] = useState(-1);

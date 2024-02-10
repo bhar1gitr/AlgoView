@@ -1,3 +1,7 @@
+*{
+    /* background: black; */
+}
+
 .logo{
     background: url(./assets/algo1.png) no-repeat;
     height: 70px;
