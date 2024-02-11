@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Box, Flex, Heading, Text, Spinner, Button } from '@chakra-ui/react';
+import Contributers from './Contributers';
 
 const RepoStats = () => {
   const [stats, setStats] = useState(null);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://api.github.com/repos/bhar1gitr/AlgoView`);
+        const response = await axios.get(`https://api.github.com/repos/bhar1gitr/AlgoView/contributors`);
         setStats(response.data);
+        console.log();
       } catch (error) {
         console.error('Error fetching repo stats:', error);
       }
@@ -40,7 +42,7 @@ const RepoStats = () => {
         </Box>
       </Flex>
 
-      <Flex>
+      <Flex bg="#0A1B1E">
         <Box flex="0 0 300px" backgroundColor="gray.100" p="4">
           <Heading as="h2" size="lg">Repository Stats</Heading>
           <Text>{stats.description}</Text>
@@ -51,6 +53,8 @@ const RepoStats = () => {
         <Box flex="1" p="4">
         </Box>
       </Flex>
+
+      <Contributers></Contributers>
     </>
   );
 };

@@ -5,10 +5,10 @@ const Footer = () => {
     <Box
       as="footer"
       width="100%"
-      backgroundColor="gray.800"
       color="white"
       py={4}
       px={8}
+      bg="#0A1B1E"
       textAlign="center"
     >
       <VStack spacing={2}>

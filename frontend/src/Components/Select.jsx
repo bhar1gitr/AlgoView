@@ -36,7 +36,7 @@ const Dropdown = () => {
         width={{ base: '100%', md: 'auto' }}
         onChange={(e) => handleNavigation(e.target.value)}
       >
-        <option value="/time-comp">TimeComplexity</option>
+        <option value="/time-comp">Time Complexity</option>
       </Select>
     </HStack>
   );
