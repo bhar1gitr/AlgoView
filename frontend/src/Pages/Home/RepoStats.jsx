@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Box, Heading, Text, Spinner } from '@chakra-ui/react';
-import { Doughnut } from 'react-chartjs-2';
+import { Box, Heading, Text, Spinner, Flex } from '@chakra-ui/react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar, faEye, faCodeBranch, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 
 const GitHubRepoStats = () => {
   const [repoStats, setRepoStats] = useState(null);
@@ -32,14 +33,25 @@ const GitHubRepoStats = () => {
 
   return (
     <Box p="4" bg='#0A1B1E' color='white'>
-      <h2 style={{textAlign:'center', color:'white',fontSize:'2.5rem'}}>GitHub Repository Stats</h2>
-      <Text>Repository Name: {repoStats.full_name}</Text>
-      <Text>Description: {repoStats.description}</Text>
-      <Text>Stars: {repoStats.stargazers_count}</Text>
-      <Text>Watchers: {repoStats.watchers_count}</Text>
-      <Text>Forks: {repoStats.forks_count}</Text>
-      <Text>Open Issues: {repoStats.open_issues_count}</Text>
-      {/* <Doughnut data={} /> */}
+      <Heading textAlign="center" fontSize="2.5rem" pb="2rem">GitHub Repository</Heading>
+      <Flex justifyContent='space-between' alignItems="center" padding='0px 300px'>
+        <Flex alignItems="center">
+          <FontAwesomeIcon icon={faStar} style={{ marginRight: '0.5rem' }} />
+          <Text>Stars: {repoStats.stargazers_count}</Text>
+        </Flex>
+        <Flex alignItems="center">
+          <FontAwesomeIcon icon={faEye} style={{ marginRight: '0.5rem' }} />
+          <Text>Watchers: {repoStats.watchers_count}</Text>
+        </Flex>
+        <Flex alignItems="center">
+          <FontAwesomeIcon icon={faCodeBranch} style={{ marginRight: '0.5rem' }} />
+          <Text>Forks: {repoStats.forks_count}</Text>
+        </Flex>
+        <Flex alignItems="center">
+          <FontAwesomeIcon icon={faExclamationCircle} style={{ marginRight: '0.5rem' }} />
+          <Text>Open Issues: {repoStats.open_issues_count}</Text>
+        </Flex>
+      </Flex>
     </Box>
   );
 };
