@@ -2,8 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { Box, Flex, Heading, Text, Spinner, Button } from '@chakra-ui/react';
 import Contributers from './Contributers';
+import RepoStats from './RepoStats';
 
-const RepoStats = () => {
+const Home = () => {
   return (
     <>
       <Flex className='home-hero' flex="0 0 300px" paddingTop='40px' paddingBottom='40px' bg='#0A1B1E'>
@@ -31,4 +32,4 @@ const RepoStats = () => {
   );
 };
 
-export default RepoStats;
+export default Home;
