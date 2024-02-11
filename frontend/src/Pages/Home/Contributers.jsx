@@ -11,6 +11,7 @@ const StyledGitHubContributions = styled.div`
     color: linear-gradient(90deg, #ff7e5f 0%, #feb47b 40%, #fff29d 80%, #21d190 100%);
     text-align: center;
     padding: 20px 0px;
+    font-weight: bold
   }
 
   ul {
