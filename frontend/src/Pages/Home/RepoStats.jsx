@@ -36,20 +36,20 @@ const GitHubRepoStats = () => {
       <Heading textAlign="center" fontSize="2.5rem" pb="2rem">GitHub Repository</Heading>
       <Flex justifyContent='space-between' alignItems="center" padding='0px 300px'>
         <Flex alignItems="center">
-          <FontAwesomeIcon icon={faStar} style={{ marginRight: '0.5rem' }} />
-          <Text>Stars: {repoStats.stargazers_count}</Text>
+          <FontAwesomeIcon color='yellow' icon={faStar} style={{ marginRight: '0.5rem' }} />
+          <Text color='yellow'>Stars: {repoStats.stargazers_count}</Text>
         </Flex>
         <Flex alignItems="center">
-          <FontAwesomeIcon icon={faEye} style={{ marginRight: '0.5rem' }} />
-          <Text>Watchers: {repoStats.watchers_count}</Text>
+          <FontAwesomeIcon color='white' icon={faEye} style={{ marginRight: '0.5rem' }} />
+          <Text color='white'>Watchers: {repoStats.watchers_count}</Text>
         </Flex>
         <Flex alignItems="center">
-          <FontAwesomeIcon icon={faCodeBranch} style={{ marginRight: '0.5rem' }} />
-          <Text>Forks: {repoStats.forks_count}</Text>
+          <FontAwesomeIcon color='green' icon={faCodeBranch} style={{ marginRight: '0.5rem' }} />
+          <Text color='green'>Forks: {repoStats.forks_count}</Text>
         </Flex>
         <Flex alignItems="center">
-          <FontAwesomeIcon icon={faExclamationCircle} style={{ marginRight: '0.5rem' }} />
-          <Text>Open Issues: {repoStats.open_issues_count}</Text>
+          <FontAwesomeIcon color='red' icon={faExclamationCircle} style={{ marginRight: '0.5rem' }} />
+          <Text color='red'>Open Issues: {repoStats.open_issues_count}</Text>
         </Flex>
       </Flex>
     </Box>
