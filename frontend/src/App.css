@@ -99,7 +99,17 @@
     color: #EAEBEA; 
   }
   
-
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card:hover .flip-card-front {
+    box-shadow: 0 8px 16px rgba(221, 7, 7, 0.2);
+  }
+  
+  .flip-card:hover .flip-card-back {
+    box-shadow: 0 8px 16px rgba(152, 42, 42, 0.2);
+  }
 
 
   
