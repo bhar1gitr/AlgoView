@@ -31,12 +31,14 @@ const Dropdown = () => {
       </Select>
       <Select
         className='select'
-        placeholder="time complexity"
+        placeholder="complexity"
         iconColor="white"
         width={{ base: '100%', md: 'auto' }}
         onChange={(e) => handleNavigation(e.target.value)}
       >
         <option value="/time-comp">Time Complexity</option>
+        <option value="/space-comp">Space Complexity</option>
+
       </Select>
     </HStack>
   );

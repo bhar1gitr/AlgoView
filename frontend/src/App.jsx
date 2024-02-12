@@ -9,6 +9,7 @@ import InsertionSort from "./Pages/Sorting/InsertionSort"
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
 import FlipCards from "./cards/TimeComplexity"
+import FlipCardsSpaceComplexity from "./cards/SpaceComplexity"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TreeTraversal from "./Pages/Tree/Traversal"
 
@@ -30,6 +31,7 @@ function App() {
             <Route path='/insertion-sort' element={<InsertionSort />} />
             
             <Route path='/time-comp' element={<FlipCards/>} />
+            <Route path='/space-comp' element={<FlipCardsSpaceComplexity/>} />
           </Routes>
           <Footer/>
         </ChakraProvider>
