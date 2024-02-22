@@ -1,50 +1,48 @@
-import { useState } from 'react';
-import './Stack.css'; 
+import React, { useState } from 'react';
+import { VStack, Button, Text, Box } from '@chakra-ui/react';
 
 const Stack = () => {
   const [stack, setStack] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [value, setValue] = useState('');
 
-  const handlePush = () => {
-    if (inputValue !== '') {
-      setStack([...stack, inputValue]);
-      setInputValue('');
+  const pushToStack = () => {
+    if (value !== '') {
+      setStack([value, ...stack]); 
+      setValue('');
     }
   };
 
-  const handlePop = () => {
+  const popFromStack = () => {
     if (stack.length > 0) {
-      const updatedStack = [...stack];
-      updatedStack.pop();
-      setStack(updatedStack);
+      setStack(stack.slice(1)); 
     }
   };
 
   return (
-    <div className="stack-container">
-      <h2>Stack</h2>
-      <div className="stack">
+    <VStack spacing={4} align="stretch" maxW="md" mx="auto" mt={8}>
+      <Box p={4} shadow="md" borderWidth="1px">
+        <Text fontSize="xl" mb={4}>Stack</Text>
         {stack.map((item, index) => (
-          <div key={index} className="stack-item">
-            {item}
-          </div>
+          <Box key={index} bg="gray.100" p={2} borderRadius="md">
+            <Text>{item}</Text>
+          </Box>
         ))}
-      </div>
-
-      <div className="stack-actions">
-        <div>
+        <Box mt={4}>
           <input
             type="text"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
             placeholder="Enter value"
           />
-          <button onClick={handlePush}>Push</button>
-        </div>
-        <button onClick={handlePop}>Pop</button>
-      </div>
-
-    </div>
+          <Button onClick={pushToStack} ml={2}>Push</Button>
+          <Button onClick={popFromStack} ml={2}>Pop</Button>
+        </Box>
+        <Box mt={4} bg="gray.200" p={2} borderRadius="md">
+          <Text>Top: {stack.length > 0 ? stack[0] : 'Stack is empty'}</Text>
+          <Text>Top - 1: {stack.length > 1 ? stack[1] : 'N/A'}</Text>
+        </Box>
+      </Box>
+    </VStack>
   );
 };
 
