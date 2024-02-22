@@ -12,7 +12,7 @@ const BinarySearch = () => {
     const [selectedCard, setSelectedCard] = useState(null);
 
     useEffect(() => {
-        setSelectedCard('java'); // Set default selected card to 'Java'
+        setSelectedCard('python'); // Set default selected card to 'Java'
     }, []);
 
     const codeMap = {
