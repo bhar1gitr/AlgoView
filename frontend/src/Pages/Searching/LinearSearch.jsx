@@ -149,6 +149,12 @@ if (result !== -1) {
                     ))}
                 </Box>
 
+                {currentSearchIndex !== -1 && (
+                    <Text mt={2} color="white">
+                        Searching at index {currentSearchIndex}...
+                    </Text>
+                )}
+
                 {searchIndex !== -1 ? (
                     <Text mt={2} color="teal.500">
                         Element found at index {searchIndex}.
@@ -191,3 +197,4 @@ if (result !== -1) {
 };
 
 export default LinearSearch;
+

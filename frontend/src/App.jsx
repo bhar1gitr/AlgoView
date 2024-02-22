@@ -1,4 +1,3 @@
-import Stack from "./Components/Stack/Stack"
 import { ChakraProvider } from '@chakra-ui/react'
 import LinearSearch from "./Pages/Searching/LinearSearch"
 import BinarySearch from "./Pages/Searching/BinarySearch"
@@ -12,6 +11,7 @@ import FlipCards from "./cards/TimeComplexity"
 import FlipCardsSpaceComplexity from "./cards/SpaceComplexity"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TreeTraversal from "./Pages/Tree/Traversal"
+import Stack from "./Components/Stack/Stack"
 
 function App() {
 
@@ -29,7 +29,8 @@ function App() {
             <Route path='/insertion-sort' element={<InsertionSort />} />
             <Route path="t" element={<TreeTraversal></TreeTraversal>}/>
             <Route path='/insertion-sort' element={<InsertionSort />} />
-            
+            <Route path='/stack' element={<Stack/>} />
+
             <Route path='/time-comp' element={<FlipCards/>} />
             <Route path='/space-comp' element={<FlipCardsSpaceComplexity/>} />
           </Routes>

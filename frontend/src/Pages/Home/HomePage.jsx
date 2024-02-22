@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Box, Flex, Heading, Text, Spinner, Button } from '@chakra-ui/react';
 import Contributers from './Contributers';
 import RepoStats from './RepoStats';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -11,7 +12,7 @@ const Home = () => {
         <Box width='50%' padding='140px 100px'>
           <Heading margin='10px 0px' as="h2" size="lg" color='white'>AlgoView</Heading>
           <Text color='white'>The ultimate resource to prepare for DSA. Everything you need, in one streamlined platform.</Text>
-          <Button colorScheme="teal" variant="solid" size="lg" marginTop='20px'>Get Started</Button>
+          <Button colorScheme="teal" variant="solid" size="lg" marginTop='20px'><Link to='https://github.com/bhar1gitr/AlgoView'>Get Started</Link></Button>
         </Box>
         <Box className='left-move' color='white' width="50%">
           <marquee scrollamount="7"><span>#queue</span></marquee>
