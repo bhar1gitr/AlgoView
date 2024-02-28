@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
       <Flex className='home-hero' flex="0 0 300px" paddingTop='40px' paddingBottom='40px' bg='#0A1B1E'>
-        <Box width='50%' padding='140px 100px'>
+        <Box width='50%' padding={{lg:'140px 100px',base:'40px 20px'}}>
           <Heading margin='10px 0px' as="h2" size="lg" color='white'>AlgoView</Heading>
           <Text color='white'>The ultimate resource to prepare for DSA. Everything you need, in one streamlined platform.</Text>
           <Button colorScheme="teal" variant="solid" size="lg" marginTop='20px'><Link to='https://github.com/bhar1gitr/AlgoView'>Get Started</Link></Button>
